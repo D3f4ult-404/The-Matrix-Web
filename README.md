@@ -42,4 +42,71 @@ You may:
 
 ### 2. Read the Outcome
 Each item clearly displays:
+- **Status badge**
+  - 🟢 Workable
+  - 🔴 Unworkable
+  - 🟡 Conditional
+- A decision banner summarizing the outcome
+
+### 3. Follow the Next Action
+Each item specifies exactly what to do next, such as:
+- “Return to Case Assembly Queue”
+- “Assemble Packet and Assign TL Review”
+
+No additional interpretation is required.
+
+---
+
+## Design Principles
+
+This site is intentionally:
+- **Static** – content does not change unless the source Excel changes
+- **Explicit** – outcomes and next actions are clearly stated
+- **Search-first** – optimized to behave like a smarter “Ctrl + F”
+- **Low-friction** – minimal reading, maximum clarity
+
+The goal is not to teach procedures, but to **prevent mistakes before they happen**.
+
+---
+
+## Status Badges
+
+Status badges use color to remove ambiguity:
+
+- 🟢 **Workable**  
+  Case may proceed to assembly following the listed action.
+
+- 🔴 **Unworkable**  
+  Case must not be assembled. Follow the listed return or escalation step.
+
+- 🟡 **Conditional**  
+  Outcome depends on a specific condition stated in the entry.
+
+---
+
+## Updates & Maintenance
+
+- Content is generated from the official Excel file
+- When the Excel is updated, the site must be regenerated
+- No manual edits should be made to `data.js`
+
+A helper script (`build_site.py`) is included to regenerate site data from the Excel source when needed.
+
+---
+
+## Deployment
+
+This site is designed to be hosted as a **static GitHub Pages site**.
+
+No server, database, or credentials are required.
+
+---
+
+## Final Note
+
+This site is not documentation for discussion.
+
+It is a **decision reference**.
+
+When in doubt, follow the **most restrictive outcome** listed.
 
